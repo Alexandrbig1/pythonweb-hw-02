@@ -1,4 +1,4 @@
-# ДЗ Тема: Основи технології  Docker
+# pythonweb-hw-02: Основи технології Docker
 
 Створіть віртуальне оточення то встановіть необхідні бібліотеки
 
@@ -8,7 +8,6 @@ pip install -r requirements.txt
 
 Запуск:
 
-```bash 
+```bash
 python main.py
 ```
-
