@@ -1,26 +1,26 @@
 function checkHealth() {
-  fetch('/healthchecker')
+  fetch("/healthchecker")
     .then((response) => {
       if (!response.ok) {
         return response.json().then((errorData) => {
-          throw new Error(errorData.detail || 'Невідома помилка')
-        })
+          throw new Error(errorData.detail || "Невідома помилка");
+        });
       }
-      return response.json()
+      return response.json();
     })
     .then((data) => {
-      console.log(data)
-      let responseDiv = document.getElementById('response')
-      responseDiv.innerHTML = data.message
-      responseDiv.className = 'response success'
+      console.log(data);
+      let responseDiv = document.getElementById("response");
+      responseDiv.innerHTML = data.message;
+      responseDiv.className = "response success";
     })
     .catch((error) => {
-      let errorMessage = error.message
-      if (errorMessage.startsWith('Error: ')) {
-        errorMessage = errorMessage.substring(7)
+      let errorMessage = error.message;
+      if (errorMessage.startsWith("Error: ")) {
+        errorMessage = errorMessage.substring(7);
       }
-      document.getElementById('response').innerHTML =
-        'Помилка запиту: ' + errorMessage
-      document.getElementById('response').className = 'response error'
-    })
+      document.getElementById("response").innerHTML =
+        "Помилка запиту: " + errorMessage;
+      document.getElementById("response").className = "response error";
+    });
 }
