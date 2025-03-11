@@ -1,4 +1,4 @@
-FROM python:3.10.0
+FROM python:3.10
 
 ENV APP_HOME /app
 
@@ -10,6 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 5000
+EXPOSE 8000
 
 CMD ["python", "main.py"]
